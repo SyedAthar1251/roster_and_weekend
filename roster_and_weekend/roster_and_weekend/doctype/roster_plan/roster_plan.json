@@ -1,0 +1,111 @@
+{
+ "doctype": "DocType",
+ "name": "Roster Plan",
+ "module": "Roster And Weekend",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "plan_title",
+   "fieldtype": "Data",
+   "label": "Plan Title"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "reqd": 1
+  },
+   {
+    "fieldname": "anchor_date",
+    "fieldtype": "Date",
+    "label": "Anchor Date",
+    "description": "Cycle day 1 reference. Keep identical when extending a plan so rotation continues"
+   },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPublished\nCancelled",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "employees",
+   "fieldtype": "Table",
+   "label": "Employees",
+   "options": "Roster Plan Employee"
+  },
+  {
+   "fieldname": "generated_count",
+   "fieldtype": "Int",
+   "label": "Generated Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "published_on",
+   "fieldtype": "Datetime",
+   "label": "Published On",
+   "read_only": 1
+  },
+   {
+    "fieldname": "last_log",
+    "fieldtype": "Small Text",
+    "label": "Last Log",
+    "read_only": 1
+   },
+   {
+    "fieldname": "confirmed_conflicts",
+    "fieldtype": "Code",
+    "label": "Confirmed Conflicts",
+    "hidden": 1,
+    "description": "JSON of employee/date/plan conflicts the user confirmed during save"
+   }
+  ],
+ "permissions": [
+  {
+   "role": "Roster Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "HR Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "autoname": "ROS-.#####",
+  "title_field": "plan_title"
+}

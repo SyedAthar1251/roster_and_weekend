@@ -1,0 +1,49 @@
+{
+ "doctype": "DocType",
+ "name": "Roster Pattern Day",
+ "module": "Roster And Weekend",
+  "custom": 0,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "day_no",
+   "fieldtype": "Int",
+   "label": "Day No",
+   "reqd": 1,
+   "columns": 1,
+   "in_list_view": 0
+  },
+  {
+   "fieldname": "weekday",
+   "fieldtype": "Data",
+   "label": "Weekday",
+   "read_only": 1,
+   "columns": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "day_type",
+   "fieldtype": "Select",
+   "label": "Day Type",
+   "options": "Work\nOff",
+   "reqd": 1,
+   "columns": 1,
+   "in_list_view": 1,
+   "default": "Work"
+  },
+  {
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "label": "Shift Type",
+   "options": "Shift Type",
+   "columns": 3,
+   "in_list_view": 1,
+   "description": "Blank = employee's default shift from the plan"
+  }
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "istable": 1
+}

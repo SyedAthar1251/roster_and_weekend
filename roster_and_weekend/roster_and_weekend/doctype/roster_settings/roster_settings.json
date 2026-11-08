@@ -1,0 +1,121 @@
+{
+ "doctype": "DocType",
+ "name": "Roster Settings",
+ "module": "Roster And Weekend",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "grace_minutes",
+   "fieldtype": "Int",
+   "label": "Grace Minutes",
+   "default": 15,
+   "description": "Late / missed-punch grace"
+  },
+  {
+   "fieldname": "ot_threshold_minutes",
+   "fieldtype": "Int",
+   "label": "Ot Threshold Minutes",
+   "default": 30,
+   "description": "Minutes after shift end before time counts as overtime"
+  },
+  {
+   "fieldname": "max_ot_hours_day",
+   "fieldtype": "Float",
+   "label": "Max Ot Hours Day",
+   "default": 4
+  },
+  {
+   "fieldname": "max_consecutive_days",
+   "fieldtype": "Int",
+   "label": "Max Consecutive Days",
+   "default": 6
+  },
+  {
+   "fieldname": "min_rest_hours",
+   "fieldtype": "Float",
+   "label": "Min Rest Hours",
+   "default": 8
+  },
+  {
+   "fieldname": "ack_hours",
+   "fieldtype": "Int",
+   "label": "Ack Hours",
+   "default": 12,
+   "description": "Alert if roster not acknowledged after N hours"
+  },
+  {
+   "fieldname": "auto_open_shift",
+   "fieldtype": "Check",
+   "label": "Auto Open Shift",
+   "default": 1,
+   "description": "Create an Open Shift automatically on no-show"
+  },
+  {
+   "fieldname": "ot_salary_component",
+   "fieldtype": "Link",
+   "label": "Ot Salary Component",
+   "options": "Salary Component",
+   "description": "Default component on generated Overtime Requests"
+  },
+  {
+   "fieldname": "auto_additional_salary",
+   "fieldtype": "Check",
+   "label": "Auto Additional Salary",
+   "default": 0,
+   "description": "On Overtime Request submit, create the Additional Salary. Leave OFF if another process already does this"
+  },
+  {
+   "fieldname": "weekend_ot_factor",
+   "fieldtype": "Float",
+   "label": "Weekend Ot Factor",
+   "default": 1,
+   "description": "Multiplier on the OT Amount formula result for Weekend OT. Keep 1 if the formula already encodes the rate"
+  },
+  {
+   "fieldname": "emergency_ot_factor",
+   "fieldtype": "Float",
+   "label": "Emergency Ot Factor",
+   "default": 1,
+   "description": "Same, for Emergency Cover OT"
+  },
+  {
+   "fieldname": "whatsapp_method",
+   "fieldtype": "Data",
+   "label": "Whatsapp Method",
+   "description": "Optional dotted path: function(mobile, message)"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Roster Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "HR Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "issingle": 1
+}

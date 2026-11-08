@@ -1,0 +1,2 @@
+{"doctype": "Page", "name": "roster-report", "page_name": "roster-report", "title": "Roster Report", "module": "Roster And Weekend", "standard": "Yes", "icon": "calendar",
+  "roles": [{"role": "Roster Manager"}, {"role": "HR Manager"}, {"role": "System Manager"}]}

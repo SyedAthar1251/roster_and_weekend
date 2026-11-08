@@ -1,0 +1,66 @@
+{
+ "doctype": "DocType",
+ "name": "Roster Pattern",
+ "module": "Roster And Weekend",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "pattern_name",
+   "fieldtype": "Data",
+   "label": "Pattern Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "cycle_days",
+   "fieldtype": "Int",
+   "label": "Cycle Days",
+   "reqd": 1,
+   "description": "7, 10, 14, 15, 21 ..."
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Table",
+   "label": "Days",
+   "options": "Roster Pattern Day"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "Roster Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "HR Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "autoname": "field:pattern_name"
+}

@@ -1,0 +1,115 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "creation": "2026-09-20 00:00:00",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+   "previous_policy_type",
+   "previous_effective_from",
+   "previous_effective_to",
+   "previous_is_active",
+   "column_break_previous",
+   "previous_rotation_weeks",
+   "previous_cycle_start_date",
+   "previous_weekend_days",
+   "previous_rotation_cycle",
+   "column_break_info",
+   "changed_on",
+   "changed_by"
+  ],
+  "fields": [
+   {
+    "fieldname": "previous_policy_type",
+    "fieldtype": "Select",
+    "in_list_view": 1,
+    "label": "Previous Policy Type",
+    "options": "Fixed\nRotational",
+    "read_only": 1
+   },
+   {
+    "fieldname": "previous_effective_from",
+    "fieldtype": "Date",
+    "in_list_view": 1,
+    "label": "Previous Effective From",
+    "read_only": 1
+   },
+   {
+    "fieldname": "previous_effective_to",
+    "fieldtype": "Date",
+    "in_list_view": 1,
+    "label": "Previous Effective To",
+    "read_only": 1
+   },
+   {
+    "default": "0",
+    "fieldname": "previous_is_active",
+    "fieldtype": "Check",
+    "in_list_view": 1,
+    "label": "Previous Is Active",
+    "read_only": 1
+   },
+   {
+    "fieldname": "column_break_previous",
+    "fieldtype": "Column Break"
+   },
+   {
+    "fieldname": "previous_rotation_weeks",
+    "fieldtype": "Int",
+    "in_list_view": 1,
+    "label": "Previous Rotation Weeks",
+    "read_only": 1
+   },
+   {
+    "fieldname": "previous_cycle_start_date",
+    "fieldtype": "Date",
+    "in_list_view": 1,
+    "label": "Previous Cycle Start Date",
+    "read_only": 1
+   },
+   {
+    "fieldname": "previous_weekend_days",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "Previous Weekend Days",
+    "read_only": 1
+   },
+   {
+    "fieldname": "previous_rotation_cycle",
+    "fieldtype": "Text",
+    "in_list_view": 1,
+    "label": "Previous Rotation Cycle",
+    "read_only": 1
+   },
+   {
+    "fieldname": "column_break_info",
+    "fieldtype": "Column Break"
+   },
+   {
+    "fieldname": "changed_on",
+    "fieldtype": "Datetime",
+    "in_list_view": 1,
+    "label": "Changed On",
+    "read_only": 1
+   },
+   {
+    "fieldname": "changed_by",
+    "fieldtype": "Data",
+    "in_list_view": 1,
+    "label": "Changed By",
+    "options": "User",
+    "read_only": 1
+   }
+  ],
+  "istable": 1,
+  "links": [],
+  "modified": "2026-09-20 13:26:25.610586",
+  "modified_by": "Administrator",
+  "module": "Roster And Weekend",
+  "name": "Weekend Policy History",
+  "owner": "Administrator",
+  "permissions": [],
+  "row_format": "Dynamic",
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

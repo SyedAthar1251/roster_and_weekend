@@ -1,0 +1,2 @@
+{"doctype": "Report", "name": "Roster vs Actual", "ref_doctype": "Roster Entry", "report_name": "Roster vs Actual", "report_type": "Script Report", "is_standard": "Yes", "module": "Roster And Weekend",
+ "roles": [{"role": "Roster Manager"}, {"role": "HR Manager"}, {"role": "System Manager"}]}

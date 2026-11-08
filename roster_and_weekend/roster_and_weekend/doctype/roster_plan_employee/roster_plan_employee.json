@@ -1,0 +1,75 @@
+{
+ "doctype": "DocType",
+ "name": "Roster Plan Employee",
+ "module": "Roster And Weekend",
+ "custom": 0,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "shift_location",
+  "employee_name",
+  "pattern",
+  "start_day_no",
+  "shift_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "columns": 2,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "shift_location",
+   "fieldtype": "Link",
+   "label": "Shift Location",
+   "options": "Shift Location",
+   "reqd": 1,
+   "columns": 2,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "fetch_from": "employee.employee_name",
+   "read_only": 1,
+   "columns": 2,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "pattern",
+   "fieldtype": "Link",
+   "label": "Pattern",
+   "options": "Roster Pattern",
+   "reqd": 1,
+   "columns": 2,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "start_day_no",
+   "fieldtype": "Int",
+   "label": "Start Day No",
+   "default": 1,
+   "columns": 1,
+   "in_list_view": 1,
+   "description": "Offset inside the cycle. Stagger staff so shifts never empty"
+  },
+  {
+   "fieldname": "shift_type",
+   "fieldtype": "Link",
+   "label": "Shift Type",
+   "options": "Shift Type",
+   "hidden": 1,
+   "description": "Not used. The shift comes from the Roster Pattern."
+  }
+ ],
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "istable": 1
+}

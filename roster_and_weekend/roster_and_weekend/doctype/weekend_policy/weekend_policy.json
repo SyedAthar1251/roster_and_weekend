@@ -1,0 +1,213 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:policy_name",
+ "creation": "2026-09-16 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "is_active",
+  "section_break_susv",
+  "policy_name",
+  "company",
+  "effective_from",
+  "rotation_weeks",
+  "column_break_kewv",
+  "policy_type",
+  "branch",
+  "cycle_start_date",
+  "section_break_weekend",
+  "weekend_days",
+  "rotation_cycle",
+  "section_break_history",
+  "custom_weekend_policy_history",
+  "section_break_ypcm",
+  "custom_history_info",
+  "section_break_info",
+  "custom_policy_info",
+  "custom_linked_shift_types",
+  "section_break_summary",
+  "custom_policy_summary",
+  "custom_status_info",
+  "custom_effective_info"
+ ],
+ "fields": [
+  {
+   "fieldname": "policy_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Policy Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "default": "Fixed",
+   "fieldname": "policy_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Policy Type",
+   "options": "Fixed\nRotational",
+   "reqd": 1
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Effective From",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "section_break_weekend",
+   "fieldtype": "Section Break",
+   "label": "Weekend Configuration"
+  },
+  {
+   "depends_on": "eval:doc.policy_type==\"Fixed\"",
+   "fieldname": "weekend_days",
+   "fieldtype": "Table",
+   "label": "Weekend Days",
+   "options": "Weekend Policy Day"
+  },
+  {
+   "depends_on": "eval:doc.policy_type==\"Rotational\"",
+   "fieldname": "cycle_start_date",
+   "fieldtype": "Date",
+   "label": "Cycle Start Date"
+  },
+  {
+   "depends_on": "eval:doc.policy_type==\"Rotational\"",
+   "fieldname": "rotation_weeks",
+   "fieldtype": "Int",
+   "label": "Rotation Weeks "
+  },
+  {
+   "depends_on": "eval:doc.policy_type==\"Rotational\"",
+   "fieldname": "rotation_cycle",
+   "fieldtype": "Table",
+   "label": "Rotation Cycle",
+   "options": "Weekend Policy Rotation"
+  },
+  {
+   "fieldname": "section_break_info",
+   "fieldtype": "Section Break",
+   "label": "Policy Information"
+  },
+  {
+   "fieldname": "custom_policy_info",
+   "fieldtype": "HTML",
+   "label": "Policy Information"
+  },
+  {
+   "fieldname": "custom_linked_shift_types",
+   "fieldtype": "HTML",
+   "label": "Linked Shift Types"
+  },
+  {
+   "fieldname": "section_break_summary",
+   "fieldtype": "Section Break",
+   "label": "Policy Summary"
+  },
+  {
+   "fieldname": "custom_policy_summary",
+   "fieldtype": "HTML",
+   "label": "Policy Summary"
+  },
+  {
+   "fieldname": "custom_status_info",
+   "fieldtype": "HTML",
+   "label": "Status Information"
+  },
+   {
+    "fieldname": "custom_effective_info",
+    "fieldtype": "HTML",
+    "label": "Effective Date Information"
+   },
+   {
+    "fieldname": "section_break_history",
+    "fieldtype": "Section Break",
+    "label": "Change History"
+   },
+   {
+    "fieldname": "custom_history_info",
+    "fieldtype": "HTML",
+    "label": "History Information",
+    "hidden": 1
+   },
+   {
+    "fieldname": "custom_weekend_policy_history",
+    "fieldtype": "Table",
+    "label": "Weekend Policy History",
+    "options": "Weekend Policy History"
+   },
+  {
+   "fieldname": "section_break_susv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kewv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ypcm",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-09-20 13:29:36.477104",
+ "modified_by": "Administrator",
+ "module": "Roster And Weekend",
+ "name": "Weekend Policy",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

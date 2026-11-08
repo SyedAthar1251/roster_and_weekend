@@ -1,0 +1,128 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"rw_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Roster And Weekend</b></span>\",\"col\":12}},{\"id\":\"rw_sc0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Hub\",\"col\":4}},{\"id\":\"rw_sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Report\",\"col\":4}},{\"id\":\"rw_sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Plan\",\"col\":4}},{\"id\":\"rw_sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Pattern\",\"col\":4}},{\"id\":\"rw_sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Entry\",\"col\":4}},{\"id\":\"rw_sc5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Weekend Policy\",\"col\":4}},{\"id\":\"rw_sc6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Week Off Swap\",\"col\":4}},{\"id\":\"rw_sc7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Swap Request\",\"col\":4}},{\"id\":\"rw_sc8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Open Shift\",\"col\":4}},{\"id\":\"rw_sc9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Site Rule\",\"col\":4}},{\"id\":\"rw_sc10\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Settings\",\"col\":4}},{\"id\":\"rw_sc11\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster vs Actual\",\"col\":4}}]",
+ "creation": "2026-08-20 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "calendar",
+ "idx": 0,
+ "indicator_color": "",
+ "is_hidden": 0,
+ "label": "Roster And Weekend",
+ "links": [],
+ "modified": "2026-08-20 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Roster And Weekend",
+ "name": "Roster And Weekend",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "Roster Manager"
+  },
+  {
+   "role": "Roster Employee"
+  }
+ ],
+ "sequence_id": 91.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Roster Hub",
+   "link_to": "roster-hub",
+   "type": "Page"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Roster Report",
+   "link_to": "roster-report",
+   "type": "Page"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Roster Plan",
+   "link_to": "Roster Plan",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Roster Pattern",
+   "link_to": "Roster Pattern",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Roster Entry",
+   "link_to": "Roster Entry",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Weekend Policy",
+   "link_to": "Weekend Policy",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Week Off Swap",
+   "link_to": "Week Off Swap",
+   "type": "DocType"
+  },
+  {
+   "color": "Gray",
+   "doc_view": "List",
+   "label": "Roster Swap Request",
+   "link_to": "Roster Swap Request",
+   "type": "DocType"
+  },
+  {
+   "color": "Gray",
+   "doc_view": "List",
+   "label": "Roster Open Shift",
+   "link_to": "Roster Open Shift",
+   "type": "DocType"
+  },
+  {
+   "color": "Gray",
+   "doc_view": "List",
+   "label": "Roster Site Rule",
+   "link_to": "Roster Site Rule",
+   "type": "DocType"
+  },
+  {
+   "color": "Gray",
+   "doc_view": "",
+   "label": "Roster Settings",
+   "link_to": "Roster Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Roster vs Actual",
+   "link_to": "Roster vs Actual",
+   "type": "Report",
+   "report_ref_doctype": "Roster Entry"
+  }
+ ],
+ "title": "Roster And Weekend"
+}
