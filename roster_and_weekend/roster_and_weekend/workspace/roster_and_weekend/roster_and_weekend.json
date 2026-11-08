@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"rw_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Roster And Weekend</b></span>\",\"col\":12}},{\"id\":\"rw_sc0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Hub\",\"col\":4}},{\"id\":\"rw_sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Report\",\"col\":4}},{\"id\":\"rw_sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Plan\",\"col\":4}},{\"id\":\"rw_sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Pattern\",\"col\":4}},{\"id\":\"rw_sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Entry\",\"col\":4}},{\"id\":\"rw_sc5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Weekend Policy\",\"col\":4}},{\"id\":\"rw_sc6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Week Off Swap\",\"col\":4}},{\"id\":\"rw_sc7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Swap Request\",\"col\":4}},{\"id\":\"rw_sc8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Open Shift\",\"col\":4}},{\"id\":\"rw_sc9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Site Rule\",\"col\":4}},{\"id\":\"rw_sc10\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Settings\",\"col\":4}},{\"id\":\"rw_sc11\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster vs Actual\",\"col\":4}}]",
+ "content": "[{\"id\":\"rw_header\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Roster And Weekend</b></span>\",\"col\":12}},{\"id\":\"rw_sc0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Hub\",\"col\":4}},{\"id\":\"rw_sc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Report\",\"col\":4}},{\"id\":\"rw_sc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Plan\",\"col\":4}},{\"id\":\"rw_sc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Pattern\",\"col\":4}},{\"id\":\"rw_sc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Entry\",\"col\":4}},{\"id\":\"rw_sc5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Weekend Policy\",\"col\":4}},{\"id\":\"rw_sc6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Week Off Swap\",\"col\":4}},{\"id\":\"rw_sc7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Swap Request\",\"col\":4}},{\"id\":\"rw_sc8\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Open Shift\",\"col\":4}},{\"id\":\"rw_sc9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Site Rule\",\"col\":4}},{\"id\":\"rw_sc10\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster Settings\",\"col\":4}},{\"id\":\"rw_sc11\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Roster vs Actual\",\"col\":4}},{\"id\":\"rw_sc12\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Shift Time Exception\",\"col\":4}}]",
  "creation": "2026-08-20 00:00:00",
  "custom_blocks": [],
  "docstatus": 0,
@@ -122,6 +122,13 @@
    "link_to": "Roster vs Actual",
    "type": "Report",
    "report_ref_doctype": "Roster Entry"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Shift Time Exception",
+   "link_to": "Shift Time Exception",
+   "type": "DocType"
   }
  ],
  "title": "Roster And Weekend"

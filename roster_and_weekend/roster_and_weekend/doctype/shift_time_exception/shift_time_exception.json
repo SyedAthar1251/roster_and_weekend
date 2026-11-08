@@ -1,0 +1,75 @@
+{
+ "doctype": "DocType",
+ "name": "Shift Time Exception",
+ "module": "Roster And Weekend",
+ "custom": 0,
+ "engine": "InnoDB",
+ "autoname": "field:exception_name",
+ "naming_rule": "By fieldname",
+ "track_changes": 1,
+ "field_order": [
+  "exception_name",
+  "enabled",
+  "column_break_1",
+  "start_offset",
+  "end_offset",
+  "section_break_2",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "exception_name",
+   "fieldtype": "Data",
+   "label": "Exception Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "For example: Late +30 min, Early -15 min"
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_offset",
+   "fieldtype": "Int",
+   "label": "Start Offset (minutes)",
+   "default": "0",
+   "in_list_view": 1,
+   "description": "Added to the Shift Type start time. Negative = earlier, positive = later."
+  },
+  {
+   "fieldname": "end_offset",
+   "fieldtype": "Int",
+   "label": "End Offset (minutes)",
+   "default": "0",
+   "in_list_view": 1,
+   "description": "Added to the Shift Type end time. Negative = earlier, positive = later."
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "permissions": [
+  {"role": "Roster Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "HR Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "report": 1, "export": 1},
+  {"role": "HR User", "read": 1},
+  {"role": "Roster Employee", "read": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

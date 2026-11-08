@@ -38,7 +38,14 @@ doc_events = {
 		"on_update": "roster_and_weekend.roster_and_weekend.events.employee_updated",
 	},
 	"Shift Assignment": {
+		"validate": "roster_and_weekend.roster_and_weekend.time_exception.validate_shift_assignment",
 		"on_submit": "roster_and_weekend.shift_assignment.update_employee_shift",
+	},
+	"Employee Checkin": {
+		"validate": "roster_and_weekend.roster_and_weekend.time_exception.apply_to_checkin",
+	},
+	"Attendance": {
+		"before_insert": "roster_and_weekend.roster_and_weekend.time_exception.set_on_attendance",
 	},
 	"Shift Type": {
 		"validate": "roster_and_weekend.roster_and_weekend.shift_type_checks.validate_shift_type",
@@ -70,10 +77,8 @@ scheduler_events = {
 	},
 }
 
-# Send /hr/roster to the roster board served by this app (/roster)
-before_request = [
-	"roster_and_weekend.overrides.roster_redirect.redirect_roster",
-]
+# The roster board is served at /hr/roster: www/roster.* in this app has the same page name as the one in HRMS,
+# so this app's page replaces the stock one (router base in the built bundle is /hr/roster).
 
 # ---------------------------------------------------------------------------
 # Install / migrate

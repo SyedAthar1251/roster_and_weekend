@@ -22,7 +22,7 @@ def get_boot():
 
 def get_context(context):
     if frappe.session.user == "Guest":
-        frappe.local.response["location"] = "/login?redirect-to=%2Froster"
+        frappe.local.response["location"] = "/login?redirect-to=%2Fhr%2Froster"
         raise frappe.Redirect
     csrf_token = frappe.sessions.get_csrf_token()
     frappe.db.commit()
@@ -36,4 +36,4 @@ def get_context(context):
 
 
 def get_default_route():
-    return "/roster"
+    return "/hr/roster"

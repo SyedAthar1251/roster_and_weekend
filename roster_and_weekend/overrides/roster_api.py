@@ -41,8 +41,10 @@ def patched_get_holidays(month_start, month_end, employee_filters):
 	return holidays
 
 
+@frappe.whitelist()
 def patched_insert_shift(
-	employee, company, shift_type, start_date, end_date, status, shift_location=None, custom_weekend_policy=None
+	employee, company, shift_type, start_date, end_date, status, shift_location=None, custom_weekend_policy=None,
+	custom_time_exception=None
 ):
 	from frappe.utils import add_days
 	from hrms.hr.doctype.shift_assignment_tool.shift_assignment_tool import create_shift_assignment
@@ -54,6 +56,8 @@ def patched_insert_shift(
 		"shift_type": shift_type,
 		"status": status,
 		"shift_location": shift_location,
+		# only join with a neighbouring assignment that has the same Time Exception (or none)
+		"custom_time_exception": custom_time_exception or ["is", "not set"],
 	}
 	prev_shift = frappe.db.exists(dict({"end_date": add_days(start_date, -1)}, **filters))
 	next_shift = (
@@ -73,13 +77,14 @@ def patched_insert_shift(
 	else:
 		create_shift_assignment(
 			employee, company, shift_type, start_date, end_date, status, shift_location,
-			custom_weekend_policy=custom_weekend_policy
+			custom_weekend_policy=custom_weekend_policy, custom_time_exception=custom_time_exception
 		)
 
 
+@frappe.whitelist()
 def patched_create_shift_schedule_assignment(
 	employee, company, shift_type, status, start_date, end_date, repeat_on_days, frequency,
-	shift_location=None, custom_weekend_policy=None
+	shift_location=None, custom_weekend_policy=None, custom_time_exception=None
 ):
 	from hrms.hr.doctype.shift_assignment_tool.shift_assignment_tool import get_or_insert_shift_schedule
 	from frappe.utils import date_diff
@@ -94,6 +99,7 @@ def patched_create_shift_schedule_assignment(
 			"shift_status": status,
 			"shift_location": shift_location,
 			"custom_weekend_policy": custom_weekend_policy,
+			"custom_time_exception": custom_time_exception,
 			"enabled": 0 if end_date else 1,
 		}
 	).insert()

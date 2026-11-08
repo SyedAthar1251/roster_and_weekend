@@ -7,7 +7,8 @@ them, which is why this is a hook and not a patch.)
 Custom fields on stock HRMS doctypes:
   Shift Assignment           roster_plan, custom_weekend_policy, custom_is_default_shift
   Shift Type                 custom_weekend_policy
-  Shift Schedule Assignment  custom_weekend_policy
+  Shift Schedule Assignment  custom_weekend_policy, custom_time_exception
+  (Shift Assignment also gets custom_time_exception; Employee Checkin and Attendance get a read-only custom_time_exception)
 The field names are the same ones CentralHrms already uses, so existing data keeps working.
 """
 import frappe
@@ -23,6 +24,18 @@ CUSTOM_FIELDS = {
 			insert_after="shift_type"),
 		dict(fieldname="custom_is_default_shift", label="Is Default Shift", fieldtype="Check",
 			in_list_view=1, in_standard_filter=1, insert_after="shift_type"),
+		dict(fieldname="custom_time_exception", label="Time Exception", fieldtype="Link", options="Shift Time Exception",
+			description="Moves this Shift Type's start/end for this assignment only.", insert_after="custom_weekend_policy"),
+	],
+	"Employee Checkin": [
+		dict(fieldname="custom_time_exception", label="Time Exception", fieldtype="Link", options="Shift Time Exception",
+			read_only=1, insert_after="shift_end"),
+		dict(fieldname="custom_exception_stamp", label="Exception Stamp", fieldtype="Data",
+			read_only=1, hidden=1, insert_after="custom_time_exception"),
+	],
+	"Attendance": [
+		dict(fieldname="custom_time_exception", label="Time Exception", fieldtype="Link", options="Shift Time Exception",
+			read_only=1, insert_after="shift"),
 	],
 	"Shift Type": [
 		dict(fieldname="custom_weekend_policy", label="Weekend Policy", fieldtype="Link", options="Weekend Policy",
@@ -32,6 +45,8 @@ CUSTOM_FIELDS = {
 	"Shift Schedule Assignment": [
 		dict(fieldname="custom_weekend_policy", label="Weekend Policy", fieldtype="Link", options="Weekend Policy",
 			insert_after="shift_status"),
+		dict(fieldname="custom_time_exception", label="Time Exception", fieldtype="Link", options="Shift Time Exception",
+			insert_after="custom_weekend_policy"),
 	],
 }
 

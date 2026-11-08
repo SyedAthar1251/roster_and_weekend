@@ -11,6 +11,7 @@ import frappe
 from frappe.utils import cint, get_datetime, get_time, getdate
 
 from roster_and_weekend.roster_and_weekend.weekend_policy import get_weekend_dates, is_weekend, resolve_weekend_policy
+from roster_and_weekend.roster_and_weekend.time_exception import get_time_exception
 
 
 class CustomShiftType(ShiftType):
@@ -57,7 +58,7 @@ class CustomShiftType(ShiftType):
 			date_of_joining = creation.date()
 
 		start_date = max(getdate(self.process_attendance_after), getdate(date_of_joining))
-		end_date = self._last_closed_shift_date()
+		end_date = self._last_closed_shift_date(employee)
 		if relieving_date:
 			end_date = min(end_date, getdate(relieving_date))
 
@@ -65,12 +66,18 @@ class CustomShiftType(ShiftType):
 			return None, None
 		return start_date, end_date
 
-	def _last_closed_shift_date(self):
-		"""Latest date whose shift (including the check-out grace time) is over at 'Last Sync of Check-in'."""
+	def _last_closed_shift_date(self, employee=None):
+		"""Latest date whose shift (including the check-out grace time) is over at 'Last Sync of Check-in'.
+		With an employee, a Shift Time Exception on their assignment moves the shift end."""
 		sync = get_datetime(self.last_sync_of_checkin)
 		day = sync.date()
 		start_t, end_t = get_time(self.start_time), get_time(self.end_time)
-		shift_end = datetime.combine(day if end_t > start_t else day + timedelta(days=1), end_t)
+		end_offset = 0
+		if employee:
+			exc = get_time_exception(employee, self.name, day)
+			if exc:
+				end_offset = exc["end_offset"]
+		shift_end = datetime.combine(day if end_t > start_t else day + timedelta(days=1), end_t) + timedelta(minutes=end_offset)
 		actual_end = shift_end + timedelta(minutes=cint(self.allow_check_out_after_shift_end_time))
 		return day if sync >= actual_end else day - timedelta(days=1)
 
