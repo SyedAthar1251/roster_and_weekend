@@ -109,6 +109,22 @@ CUSTOM_FIELDS = {
             insert_after="custom_weekend_policy",
         ),
     ],
+    "Shift Assignment Tool": [
+        dict(
+            fieldname="custom_weekend_policy",
+            label="Weekend Policy",
+            fieldtype="Link",
+            options="Weekend Policy",
+            insert_after="shift_location",
+        ),
+        dict(
+            fieldname="custom_time_exception",
+            label="Shift Time Exception",
+            fieldtype="Link",
+            options="Shift Time Exception",
+            insert_after="custom_weekend_policy",
+        ),
+    ],
 }
 
 

@@ -6,7 +6,8 @@
  "engine": "InnoDB",
  "autoname": "field:exception_name",
  "naming_rule": "By fieldname",
- "track_changes": 1,
+  "track_changes": 1,
+  "allow_import": 1,
  "field_order": [
   "exception_name",
   "enabled",
